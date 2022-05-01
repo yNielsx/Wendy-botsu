@@ -11,17 +11,14 @@ module.exports = {
     const commands = client.commands;
     const interactionUser = interaction.user.id;
     const GuildDB = await dbs.fetch('Guilds', interaction.guild.id);
-
     const UserDB = await dbs.fetch('Users', interaction.user.id);
 
     if (GuildDB) {
-      const langs = GuildDB.langs === 0 ? pt : en;
-
       if (interaction.isCommand()) {
         const command = commands.get(interaction.commandName);
+        const langs = GuildDB.langs === 0 ? pt : en;
 
         if (!command) return;
-
         if (!interaction.member.permissions.has(command.permissions || [])) {
           return interaction.reply({
             content: `> ( ${emj.warn} ) **・** ${String(langs.hasPermissions.user).replace('{PERMS}', command.permissions)}`,
@@ -62,7 +59,6 @@ module.exports = {
         }
 
         stamps.set(interactionUser, now);
-
         setTimeout(() => stamps.delete(interactionUser), cAmount);
 
 
@@ -72,7 +68,7 @@ module.exports = {
           } catch (err) {
             const channel = client.channels.cache.get('970001491689607168')
 
-            channel.send(`Um novo erro encontrado ${err} no comando ${command.name}`)
+            channel.send(`Um novo erro encontrado \n ${err}\n no comando ${command.name}`)
           }
         }
       }

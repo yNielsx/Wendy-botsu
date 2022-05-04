@@ -1,6 +1,6 @@
 module.exports = {
-  warn: '<:warn:969299587921760296>',
+  warn: '<:warn:970808356199628840>',
   clock: '<:clock:969299587217096735>',
-  ping: '<:ping_pong:969720207226589275>',
-  megafone: '<:megaphone:963878890395283486>'
+  ping: '<:Ping:970798135951650816>',
+  megaphone: '<:megaphone:970798134382985276>'
 }

@@ -21,21 +21,21 @@ module.exports = {
         if (!command) return;
         if (!interaction.member.permissions.has(command.permissions || [])) {
           return interaction.reply({
-            content: `> ( ${emj.warn} ) **・** ${String(langs.hasPermissions.user).replace('{PERMS}', command.permissions)}`,
+            content: `> 𖥔﹐ᦈ⚠️⁺๑ ${String(langs.hasPermissions.user).replace('{PERMS}', command.permissions)}・⌗`,
             ephemeral: true
           })
         };
 
         if (!interaction.guild.me.permissions.has(command.botPermissions || [])) {
           return interaction.reply({
-            content: `> ( ${emj.warn} ) **・**  ${String(langs.hasPermissions.bot).replace('{PERMS}', command.botPermissions)}`,
+            content: `> 𖥔﹐ᦈ⚠️⁺๑ ${String(langs.hasPermissions.bot).replace('{PERMS}', command.botPermissions)}・⌗`,
             ephemeral: true
           })
         }
 
         if (!UserDB) {
           return interaction.reply({
-            content: `> ( ${emj.megafone} ) **・** ${String(langs.userDB)}`,
+            content: `> 𖥔﹐ᦈ📣⁺๑ ${String(langs.userDB)}・⌗`,
             ephemeral: true
           })
         }
@@ -52,7 +52,7 @@ module.exports = {
           if (now < exTime) {
             const Timeout = (exTime - now) / 1000;
             return interaction.reply({
-              content: `> ${String(langs.cooldownInt).replace('{TIME}', Math.round(Timeout.toFixed(1)))}`,
+              content: `> 𖥔﹐ᦈ⏳⁺๑ ${String(langs.cooldownInt).replace('{TIME}', Math.round(Timeout.toFixed(1)))}・⌗`,
               ephemeral: true
             });
           }
@@ -68,7 +68,11 @@ module.exports = {
           } catch (err) {
             const channel = client.channels.cache.get('970001491689607168')
 
-            channel.send(`Um novo erro encontrado \n ${err}\n no comando ${command.name}`)
+            channel.send(`> ✿┆₊🌼୧◦Foi encontrado um novo erro no comando \`/${command.name}\`, no servidor **${interaction.guild.name}** ( \`${interaction.guild.id}\` )! ˖.⭒
+
+**ʚ🐞୧﹕Erro encontradoഒ**\`\`\`js
+${err}
+\`\`\``)
           }
         }
       }

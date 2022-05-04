@@ -18,7 +18,7 @@ module.exports = async (client, PGlob, cool) => {
   });
 
   client.on('ready', async () => {
-    const mainGuild = await client.guilds.cache.get('968499292673278083');
+    const mainGuild = await client.guilds.cache.get('954416329652314204');
 
     mainGuild.commands.set(commandsArray);
   });

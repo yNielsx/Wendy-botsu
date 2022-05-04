@@ -1,16 +1,15 @@
-const { firebaseConfig } = require('../files/config');
-
 const { initializeApp } = require("firebase/app");
-const { 
-  getFirestore,
-  doc,
-  setDoc,
-  getDoc,
-  updateDoc,
-  deleteDoc
-} = require('firebase/firestore');
+const { getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc } = require('firebase/firestore');
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp({
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  databaseURL: process.env.databaseURL,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId
+});
 const db = getFirestore(app);
 
 module.exports = {

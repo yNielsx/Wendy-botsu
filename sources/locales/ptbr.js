@@ -5,11 +5,9 @@ module.exports = {
     bot: 'Infelizmente não vai da para eu executar este comando, parece que eu não possuo as seguintes permissões necessárias para executar o comando \`{PERMS}\`.'
   },
 
-  cooldownInt: 'Eii vá com calma, vocé precisa esperar \`{TIME} segundos\` para executar o comando novamente.',
+  cooldownInt: 'Eii, apressado(a)!! você precisa esperar **{TIME} segundos** para executar outro comando.',
 
-  userDB: 'Eii, você não está registrado em minha database, digite \`registrar-database\` para se registrar em minha database',
+  userDB: 'Eii, você não está registrado em minha database, digite \`/registrar-database\` para se registrar em minha database',
 // COMANDOS
-  utilities: {
-    ping: '**Pong!** **\`{PING}ms\`**'
-  }
+  ErrorCommand: "Desculpe, parece que ocorreu algum erro ao executar este comando, mais não se preocupe irei enviar-lo aos meus desenvolvedores para o consertar o mais rápido possível."
 }
